@@ -16,7 +16,12 @@ jobs:
       - name: Install node package
         run: yarn install --frozen-lockfile
 
+      - name: Setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
       - name: Deploy 🚀
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        # env:
+        #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx ng deploy --base-href=/${{ github.event.repository.name }}/ --no-silent
