@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  build-and-deploy:
+  angular-build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -22,6 +22,5 @@ jobs:
       - name: Deploy 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="Actions bot" --email="<>" --no-silent
+          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="GitHub Actions Bot" --email="<>"
