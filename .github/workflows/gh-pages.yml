@@ -1,5 +1,8 @@
 name: Deploy to gh-pages
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,12 +19,8 @@ jobs:
       - name: Install node package
         run: yarn install --frozen-lockfile
 
-      - name: Setup git config
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
       - name: Deploy 🚀
         # env:
         #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx ng deploy --base-href=/${{ github.event.repository.name }}/ --no-silent
+        run: |
+          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="mrpachara"--email="mrpachara@gmail.com" --no-silent
