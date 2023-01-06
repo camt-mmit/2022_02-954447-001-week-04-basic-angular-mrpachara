@@ -19,4 +19,4 @@ jobs:
       - name: Deploy 🚀
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx ng deploy --base-href=/${{ github.event.repository.name }}/
+        run: npx ng deploy --base-href=/${{ github.event.repository.name }}/ --no-silent
