@@ -23,4 +23,4 @@ jobs:
         # env:
         #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="mrpachara"--email="mrpachara@gmail.com" --no-silent
+          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="mrpachara" --email="mrpachara@gmail.com" --no-silent
