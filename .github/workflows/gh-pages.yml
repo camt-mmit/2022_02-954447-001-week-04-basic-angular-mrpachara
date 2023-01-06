@@ -20,7 +20,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Deploy 🚀
-        # env:
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="mrpachara" --email="mrpachara@gmail.com" --no-silent
+          npx ng deploy --base-href=/${{ github.event.repository.name }}/ --name="Actions bot" --email="<>" --no-silent
